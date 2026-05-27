@@ -1,0 +1,63 @@
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - heading "YouTube PAN" [level=1] [ref=e5]
+      - paragraph [ref=e6]: 유튜브 링크를 넣고 댓글 감정/단어 지표를 확인하세요.
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - generic [ref=e10]: YouTube URL
+        - textbox "https://www.youtube.com/watch?v=..." [ref=e11]: https://www.youtube.com/watch?v=_OEimioamfI
+      - generic [ref=e12]:
+        - generic [ref=e13]: max_comments
+        - spinbutton [ref=e14]: "20"
+      - button "분석하기" [ref=e15]
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - heading "영상 정보" [level=2] [ref=e28]
+        - generic [ref=e29]:
+          - generic [ref=e30]: "[모아나] 티저 예고편"
+          - generic [ref=e31]: Disney Korea
+          - generic [ref=e32]: "댓글 수집: 20"
+      - generic [ref=e33]:
+        - heading "감정 분포 (도넛)" [level=2] [ref=e34]
+        - application [ref=e38]
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]: 긍정
+            - generic [ref=e54]: "4"
+          - generic [ref=e55]:
+            - generic [ref=e56]: 중립
+            - generic [ref=e57]: "12"
+          - generic [ref=e58]:
+            - generic [ref=e59]: 부정
+            - generic [ref=e60]: "4"
+      - generic [ref=e61]:
+        - heading "Top words (막대)" [level=2] [ref=e62]
+        - application [ref=e66]:
+          - generic [ref=e107]:
+            - generic [ref=e108]:
+              - generic [ref=e110]: 이렇게
+              - generic [ref=e112]: 인어공주
+              - generic [ref=e114]: 디즈니
+              - generic [ref=e116]: 아니
+              - generic [ref=e118]: 그대로
+              - generic [ref=e120]: 디즈니야
+              - generic [ref=e122]: 백설공주
+              - generic [ref=e124]: 다시
+              - generic [ref=e126]: 미쳤다
+              - generic [ref=e128]: 있었잖아
+              - generic [ref=e130]: 그래픽
+              - generic [ref=e132]: 미쳤는데
+            - generic [ref=e133]:
+              - generic [ref=e135]: "0"
+              - generic [ref=e137]: "2"
+              - generic [ref=e139]: "4"
+              - generic [ref=e141]: "6"
+              - generic [ref=e143]: "8"
+      - generic [ref=e144]:
+        - heading "워드클라우드" [level=2] [ref=e145]
+        - img "wordcloud" [ref=e146]
+  - button "Open Next.js Dev Tools" [ref=e21] [cursor=pointer]:
+    - img [ref=e22]
+  - alert [ref=e25]
+  - generic [ref=e147]: "0"

@@ -25,9 +25,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body suppressHydrationWarning className="min-h-full flex flex-col">
+        <div className="flex-1">{children}</div>
+        <footer className="border-t bg-background">
+          <div className="mx-auto w-full max-w-6xl px-4 py-6 text-xs text-muted-foreground">
+            Copyright © {new Date().getFullYear()} kimyewon. All rights reserved.
+          </div>
+        </footer>
+      </body>
     </html>
   );
 }

@@ -1,0 +1,16 @@
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - heading "YouTube PAN" [level=1] [ref=e5]
+      - paragraph [ref=e6]: 유튜브 링크를 넣고 댓글 감정/단어 지표를 확인하세요.
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - generic [ref=e10]: YouTube URL
+        - textbox "https://www.youtube.com/watch?v=..." [ref=e11]: https://www.youtube.com/watch?v=_OEimioamfI
+      - generic [ref=e12]:
+        - generic [ref=e13]: max_comments
+        - spinbutton [ref=e14]: "20"
+      - button "분석하기" [ref=e15]
+  - button "Open Next.js Dev Tools" [ref=e21] [cursor=pointer]:
+    - img [ref=e22]
+  - alert [ref=e25]
