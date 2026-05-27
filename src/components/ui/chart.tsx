@@ -1,9 +1,14 @@
 "use client";
 
 import * as React from "react";
-import { Tooltip } from "recharts";
+import dynamic from "next/dynamic";
 
 import { cn } from "@/lib/utils";
+
+const RechartsTooltip = dynamic(
+  () => import("recharts").then((m) => m.Tooltip),
+  { ssr: false },
+);
 
 type ChartConfig = Record<
   string,
@@ -86,18 +91,10 @@ function ChartTooltipContent({
   );
 }
 
-function ChartTooltip(props: React.ComponentProps<typeof Tooltip>) {
-  const [mounted, setMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Recharts 툴팁은 SSR 단계에서 환경 차이로 깨질 수 있어
-  // 클라이언트 마운트 후에만 렌더링합니다.
-  if (!mounted) return null;
-
-  return <Tooltip cursor={{ fill: "hsl(var(—muted))" }} {…props} />;
+function ChartTooltip(props: React.ComponentProps<typeof RechartsTooltip>) {
+  return (
+    <RechartsTooltip cursor={{ fill: "hsl(var(--muted))" }} {...props} />
+  );
 }
 
 export { ChartContainer, ChartTooltip, ChartTooltipContent };
