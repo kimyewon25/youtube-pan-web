@@ -1,5 +1,4 @@
 import * as React from "react";
-import type { TooltipProps } from "recharts";
 import { Tooltip } from "recharts";
 
 import { cn } from "@/lib/utils";
@@ -29,14 +28,24 @@ const ChartContainer = React.forwardRef<
 ));
 ChartContainer.displayName = "ChartContainer";
 
+type ChartTooltipContentProps = {
+  active?: boolean;
+  payload?: Array<{
+    name?: unknown;
+    value?: unknown;
+    color?: string;
+    fill?: string;
+  }>;
+  label?: unknown;
+  formatter?: (value: number, name: string, item: unknown) => React.ReactNode;
+};
+
 function ChartTooltipContent({
   active,
   payload,
   label,
   formatter,
-}: TooltipProps<number, string> & {
-  formatter?: (value: number, name: string, item: unknown) => React.ReactNode;
-}) {
+}: ChartTooltipContentProps) {
   if (!active || !payload?.length) return null;
 
   return (
@@ -49,10 +58,10 @@ function ChartTooltipContent({
           const name = String(p.name ?? "");
           const value = typeof p.value === "number" ? p.value : Number(p.value);
           const dotColor =
-            typeof (p as unknown as { color?: string }).color === "string"
-              ? (p as unknown as { color: string }).color
-              : typeof (p as unknown as { fill?: string }).fill === "string"
-                ? (p as unknown as { fill: string }).fill
+            typeof p.color === "string"
+              ? p.color
+              : typeof p.fill === "string"
+                ? p.fill
                 : undefined;
           return (
             <div key={name} className="flex items-center justify-between gap-6">
@@ -76,7 +85,7 @@ function ChartTooltipContent({
 }
 
 function ChartTooltip(props: React.ComponentProps<typeof Tooltip>) {
-  return <Tooltip cursor={{ fill: "hsl(var(--muted))" }} {...props} />;
+  return <Tooltip cursor={{ fill: "hsl(var(—muted))" }} {…props} />;
 }
 
 export { ChartContainer, ChartTooltip, ChartTooltipContent };
